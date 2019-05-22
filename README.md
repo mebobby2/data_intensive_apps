@@ -1,5 +1,5 @@
 # data_intensive_apps
 
 ## Upto
-Page 32
-Scalability
+Page 42
+Simplicity: Managing Complexity
