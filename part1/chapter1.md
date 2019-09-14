@@ -61,7 +61,7 @@ Load can be described with a few numbers which we call load parameters. The best
 
 ### Describing Performance
 Once you have described the load on your system, you can investigate what happens when the load increases. You can look at it in two ways:
-1. When you increase a load parameter and keep the system resources (CPU, mem‐ ory, network bandwidth, etc.) unchanged, how is the performance of your system affected?
+1. When you increase a load parameter and keep the system resources (CPU, memory, network bandwidth, etc.) unchanged, how is the performance of your system affected?
 2. When you increase a load parameter, how much do you need to increase the resources if you want to keep performance unchanged?
 
 Both questions require performance numbers, so let’s look briefly at describing the performance of a system.
@@ -83,12 +83,12 @@ How do we maintain good performance even when our load parameters increase by so
 
 People often talk of a dichotomy between *scaling up* (vertical scaling, moving to a more powerful machine) and *scaling out* (horizontal scaling, distributing the load across multiple smaller machines). Distributing load across multiple machines is also known as a *shared-nothing* architecture.
 
-Some systems are elastic, meaning that they can automatically add computing resour‐ ces when they detect a load increase, whereas other systems are scaled manually (a human analyzes the capacity and decides to add more machines to the system). An elastic system can be useful if load is highly unpredictable, but manually scaled sys‐ tems are simpler and may have fewer operational surprises.
+Some systems are elastic, meaning that they can automatically add computing resources when they detect a load increase, whereas other systems are scaled manually (a human analyzes the capacity and decides to add more machines to the system). An elastic system can be useful if load is highly unpredictable, but manually scaled sys‐ tems are simpler and may have fewer operational surprises.
 
 While distributing stateless services across multiple machines is fairly straightforward, taking stateful data systems from a single node to a distributed setup can intro‐ duce a lot of additional complexity. For this reason, common wisdom until recently was to keep your database on a single node (scale up) until scaling cost or high - availability requirements forced you to make it distributed.
 
 ## Maintainability
-t is well known that the majority of the cost of software is not in its initial develop‐ ment, but in its ongoing maintenance—fixing bugs, keeping its systems operational, investigating failures, adapting it to new platforms, modifying it for new use cases, repaying technical debt, and adding new features.
+t is well known that the majority of the cost of software is not in its initial development, but in its ongoing maintenance—fixing bugs, keeping its systems operational, investigating failures, adapting it to new platforms, modifying it for new use cases, repaying technical debt, and adding new features.
 
 We will pay particular attention to three design principles for software systems:
 * Operability - Make it easy for operations teams to keep the system running smoothly
@@ -104,3 +104,17 @@ Good operability means making routine tasks easy, allowing the operations team t
 * Providing good default behavior, but also giving administrators the freedom to override defaults when needed
 * Self-healing where appropriate, but also giving administrators manual control over the system state when needed
 * Exhibiting predictable behavior, minimizing surprises
+
+### Simplicity: Managing Complexity
+There are various possible symptoms of complexity: explosion of the state space, tight coupling of modules, tangled dependencies, inconsistent naming and terminology, hacks aimed at solving performance problems, special-casing to work around issues elsewhere, and many more. When the system is harder for developers to understand and reason about, hidden assumptions, unintended consequences, and unexpected interactions are more easily overlooked.
+
+Making a system simpler does not necessarily mean reducing its functionality; it can also mean removing *accidental* complexity. Complexity as accidental if it is not inherent in the problem that the software solves (as seen by the users) but arises only from the implementation.
+
+One of the best tools we have for removing accidental complexity is *abstraction*. A good abstraction can hide a great deal of implementation detail behind a clean, simple-to-understand façade. A good abstraction can also be used for a wide range of different applications. Not only is this reuse more efficient than reimplementing a similar thing multiple times, but it also leads to higher-quality software, as quality improvements in the abstracted component benefit all applications that use it.
+
+### Evolvability: Making Change Easy
+In terms of organizational processes, Agile working patterns provide a framework for adapting to change. The Agile community has also developed technical tools and pat‐ terns that are helpful when developing software in a frequently changing environment, such as test-driven development (TDD) and refactoring.
+
+Most discussions of these Agile techniques focus on a fairly small, local scale (a cou‐ ple of source code files within the same application). We will aim to search for ways of increasing agility on the level of a larger data system, perhaps consisting of several different applications or services with different characteristics.
+
+The ease with which you can modify a data system, and adapt it to changing requirements, is closely linked to its simplicity and its abstractions. we use the term *evolvability* to refer to agility on a data system level.

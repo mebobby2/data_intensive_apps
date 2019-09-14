@@ -1,4 +1,4 @@
-In the last decade we have seen many interesting developments in databases, in dis‐ tributed systems, and in the ways we build applications on top of them. There are various driving forces for these developments:
+In the last decade we have seen many interesting developments in databases, in distributed systems, and in the ways we build applications on top of them. There are various driving forces for these developments:
 * Internet companies such as Google, Yahoo!, Amazon, Facebook, LinkedIn, Microsoft, and Twitter are handling huge volumes of data and traffic, forcing them to create new tools that enable them to efficiently handle such scale.
 * Businesses need to be agile, test hypotheses cheaply, and respond quickly to new market insights by keeping development cycles short and data models flexible.
 * Free and open source software has become very successful and is now preferred to commercial or bespoke in-house software in many environments.
