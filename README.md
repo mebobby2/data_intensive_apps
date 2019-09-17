@@ -1,5 +1,5 @@
 # data_intensive_apps
 
 ## Upto
-Page 50
-Relational Model Versus Document Model
+Page 71
+Graph-Like Data Models
