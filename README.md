@@ -1,6 +1,6 @@
 # data_intensive_apps
 
 ## Upto
-Page 77
+Page 98
 
-Triple-Stores and SPARQL
+SSTables and LSM-Trees
