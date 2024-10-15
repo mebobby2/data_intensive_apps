@@ -1,6 +1,6 @@
 # data_intensive_apps
 
 ## Upto
-Page 153
+Page 178
 
-Dataflow Through Services: REST and RPC
+Handling Node Outages
