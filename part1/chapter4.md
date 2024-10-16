@@ -261,9 +261,9 @@ In the past, the landscape of message brokers was dominated by commercial enter�
 A topic provides only one-way dataflow. However, a consumer may itself publish messages to another topic (so you can chain them together, as we shall see in Chap‐ ter 11), or to a reply queue that is consumed by the sender of the original message (allowing a request/response dataflow, similar to RPC).
 
 #### Distributed actor frameworks
-The actor model is a programming model for concurrency in a single process. Rather than dealing directly with threads (and the associated problems of race conditions, locking, and deadlock), logic is encapsulated in actors. Each actor typically represents one client or entity, it may have some local state (which is not shared with any other actor), and it communicates with other actors by sending and receiving asynchro‐ nous messages. Message delivery is not guaranteed: in certain error scenarios, mes‐ sages will be lost. Since each actor processes only one message at a time, it doesn't need to worry about threads, and each actor can be scheduled independently by the framework.
+The actor model is a programming model for concurrency in a single process. Rather than dealing directly with threads (and the associated problems of race conditions, locking, and deadlock), logic is encapsulated in actors. Each actor typically represents one client or entity, it may have some local state (which is not shared with any other actor), and it communicates with other actors by sending and receiving asynchronous messages. Message delivery is not guaranteed: in certain error scenarios, messages will be lost. Since each actor processes only one message at a time, it doesn't need to worry about threads, and each actor can be scheduled independently by the framework.
 
-In distributed actor frameworks, this programming model is used to scale an applica‐ tion across multiple nodes. The same message-passing mechanism is used, no matter whether the sender and recipient are on the same node or different nodes. If they are on different nodes, the message is transparently encoded into a byte sequence, sent over the network, and decoded on the other side.
+In distributed actor frameworks, this programming model is used to scale an application across multiple nodes. The same message-passing mechanism is used, no matter whether the sender and recipient are on the same node or different nodes. If they are on different nodes, the message is transparently encoded into a byte sequence, sent over the network, and decoded on the other side.
 
 Location transparency works better in the actor model than in RPC, because the actor model already assumes that messages may be lost, even within a single process. Although latency over the network is likely higher than within the same process, there is less of a fundamental mismatch between local and remote communication when using the actor model.
 
@@ -291,3 +291,12 @@ We also discussed several modes of dataflow, illustrating different scenarios in
 * RPC and REST APIs, where the client encodes a request, the server decodes the request and encodes a response, and the client finally decodes the response
 * Asynchronous message passing (using message brokers or actors), where nodes communicate by sending each other messages that are encoded by the sender and decoded by the recipient
 We can conclude that with a bit of care, backward/forward compatibility and rolling upgrades are quite achievable. May your application’s evolution be rapid and your deployments be frequent.
+
+## Own Notes
+So, traditional RPC like CORBA is 'local first'. That is, they try to hide the complexity/flakiness of the network behind a local function call. This means, the developer's code is not encouraged to handle things like timeouts, lost messages, and delays.
+
+However, in newer frameworks like gRPC, it's 'network first'. That, the network is a first class citizen, which is why calls are wrapped in Futures. So, developers are forced to handle the complex netoworking failures in their code. This is a better approach because local function call errors are easier to handled then RPC ones and most of the times, local calls almost always succeed.
+
+The distributed actor model is also 'network first' because Actors already assume messages can be lost - even within the same process.
+
+Hence, the newer breeds of RPC is better because they invert the philosophy, 'network first' rather than 'local first'.

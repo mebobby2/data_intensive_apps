@@ -20,4 +20,4 @@ There are two common ways data is distributed across multiple nodes:
 * Replication - Keeping a copy of the same data on several different nodes, potentially in differ‐ ent locations. Replication provides redundancy: if some nodes are unavailable, the data can still be served from the remaining nodes. Replication can also help improve performance.
 * Partitioning - Splitting a big database into smaller subsets called partitions so that different par‐ titions can be assigned to different nodes (also known as sharding).
 
-These are separate mechanisms, but they often go hand in hand.
+These are separate mechanisms, but they often go hand in hand. E.g. alot of systems partition the data and place the partitions across many nodes for scalability, and then the partitions are also replicated and the replicas are then also spread out across the nodes for redundancy.
