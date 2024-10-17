@@ -1,6 +1,6 @@
 # data_intensive_apps
 
 ## Upto
-Page 178
+Page 183
 
-Handling Node Outages
+Problems with Replication Lag
