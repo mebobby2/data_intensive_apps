@@ -1,6 +1,6 @@
 # data_intensive_apps
 
 ## Upto
-Page 183
+Page 194
 
-Problems with Replication Lag
+Converging toward a consistent state
