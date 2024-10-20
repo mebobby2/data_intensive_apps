@@ -1,6 +1,6 @@
 # data_intensive_apps
 
 ## Upto
-Page 194
+Page 201
 
-Converging toward a consistent state
+Quorums for reading and writing
