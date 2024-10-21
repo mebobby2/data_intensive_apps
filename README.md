@@ -1,6 +1,6 @@
 # data_intensive_apps
 
 ## Upto
-Page 201
+Page 221
 
-Quorums for reading and writing
+CHAPTER 6
