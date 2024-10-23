@@ -1,6 +1,6 @@
 # data_intensive_apps
 
 ## Upto
-Page 221
+Page 231
 
-CHAPTER 6
+Rebalancing Partitions
