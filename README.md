@@ -1,6 +1,6 @@
 # data_intensive_apps
 
 ## Upto
-Page 231
+Page 255
 
-Rebalancing Partitions
+Weak Isolation Levels
