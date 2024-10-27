@@ -1,6 +1,6 @@
 # data_intensive_apps
 
 ## Upto
-Page 264
+Page 271
 
-Preventing Lost Updates
+More examples of write skew
