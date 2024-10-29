@@ -1,6 +1,6 @@
 # data_intensive_apps
 
 ## Upto
-Page 283
+Page 295
 
-Serializable Snapshot Isolation (SSI)
+Chapter 8
