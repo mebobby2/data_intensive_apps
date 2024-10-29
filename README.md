@@ -1,6 +1,6 @@
 # data_intensive_apps
 
 ## Upto
-Page 271
+Page 283
 
-More examples of write skew
+Serializable Snapshot Isolation (SSI)
