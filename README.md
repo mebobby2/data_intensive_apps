@@ -1,6 +1,6 @@
 # data_intensive_apps
 
 ## Upto
-Page 295
+Page 303
 
-Chapter 8
+Timeouts and Unbounded Delays
