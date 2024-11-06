@@ -1,6 +1,6 @@
 # data_intensive_apps
 
 ## Upto
-Page 309
+Page 372
 
-Unreliable Clocks
+Implementing linearizable storage using total order broadcast
