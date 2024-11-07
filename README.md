@@ -1,6 +1,6 @@
 # data_intensive_apps
 
 ## Upto
-Page 372
+Page 407
 
-Implementing linearizable storage using total order broadcast
+PART III
