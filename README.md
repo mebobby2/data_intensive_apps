@@ -1,6 +1,6 @@
 # data_intensive_apps
 
 ## Upto
-Page 461
+Page 477
 
-CHAPTER 11
+Initial snapshot
