@@ -1,6 +1,6 @@
 # data_intensive_apps
 
 ## Upto
-Page 511
+Page 531
 
-CHAPTER 12
+Observing Derived State
